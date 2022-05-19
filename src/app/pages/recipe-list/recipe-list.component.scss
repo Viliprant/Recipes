@@ -1,0 +1,18 @@
+$button-size: 40px;
+
+::ng-deep #add-button {
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+
+    height: $button-size * 2;
+    width: $button-size * 2;
+    display: grid;
+    place-items: center;
+
+    .mat-icon {
+        font-size: $button-size;
+        height: $button-size;
+        width: $button-size;
+    }
+}

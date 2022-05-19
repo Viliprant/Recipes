@@ -1,0 +1,8 @@
+:host ::ng-deep {
+    display: block;
+    min-width: 250px !important;
+}
+
+.active {
+    background-color: hsla(231deg, 48%, 48%, 0.3) !important;
+}

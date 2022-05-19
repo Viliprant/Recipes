@@ -1,0 +1,45 @@
+<h2>Nouvelle recette</h2>
+
+<mat-stepper orientation="vertical" [linear]="true">
+    <mat-step [stepControl]="recipeFormGroup" errorMessage="Nom de la recette requise">
+        <form [formGroup]="recipeFormGroup" autocomplete="off">
+            <ng-template matStepLabel>Nommer la recette</ng-template>
+            <mat-form-field appearance="fill">
+                <mat-label>Nom de la recette</mat-label>
+                <input matInput placeholder="Super plat végétarien" formControlName="recipeName" required>
+            </mat-form-field>
+            <div>
+                <button mat-stroked-button color="primary" matStepperNext>Suivant</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="ingredientsFormGroup" errorMessage="Il faut au minimum un ingrédient">
+        <form [formGroup]="ingredientsFormGroup" autocomplete="off">
+            <ng-template matStepLabel>Liste des ingrédients</ng-template>
+            <div id="ingredient-list">
+                <!-- TODO: Liste des ingredients + le bouton ajouter -->
+                <div *ngFor="let ingredient of ingredientList.controls" class="ingredient-wrapper">
+                    <div class="ingredient-img"></div>
+                    <span>{{ingredient.value}}</span>
+                </div>
+                <button mat-fab aria-label="Add" id="add-ingredient">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+            <!-- <mat-form-field appearance="fill">
+                <mat-label>Ingrédient</mat-label>
+                <input matInput formControlName="ingredientList">
+            </mat-form-field> -->
+            <div>
+                <button mat-stroked-button color="primary" matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Terminer</ng-template>
+        <p>Fini.</p>
+        <div>
+            <!-- TODO: ajouter le submit -->
+        </div>
+    </mat-step>
+</mat-stepper>
