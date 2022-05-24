@@ -18,12 +18,14 @@ button {
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem;
+    align-items: flex-start;
 
     .ingredient-wrapper {
         display: grid;
         position: relative;
         row-gap: 0.5rem;
         text-align: center;
+        width: 56px;
 
         .ingredient-img {
             border-radius: 50%;

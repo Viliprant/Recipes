@@ -17,19 +17,14 @@
         <form [formGroup]="ingredientsFormGroup" autocomplete="off">
             <ng-template matStepLabel>Liste des ingrédients</ng-template>
             <div id="ingredient-list">
-                <!-- TODO: Liste des ingredients + le bouton ajouter -->
                 <div *ngFor="let ingredient of ingredientList.controls" class="ingredient-wrapper">
                     <div class="ingredient-img"></div>
-                    <span>{{ingredient.value}}</span>
+                    <span>{{ingredient.value.Name}} {{ingredient.value.Quantity}}</span>
                 </div>
-                <button mat-fab aria-label="Add" id="add-ingredient">
+                <button mat-fab aria-label="Add" id="add-ingredient" (click)="openAddIngredientDialog()">
                     <mat-icon>add</mat-icon>
                 </button>
             </div>
-            <!-- <mat-form-field appearance="fill">
-                <mat-label>Ingrédient</mat-label>
-                <input matInput formControlName="ingredientList">
-            </mat-form-field> -->
             <div>
                 <button mat-stroked-button color="primary" matStepperNext>Next</button>
             </div>

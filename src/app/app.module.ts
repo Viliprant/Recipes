@@ -17,13 +17,16 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { NavComponent } from './shared/nav/nav.component';
 import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddIngredientDialogComponent } from './shared/add-ingredient-dialog/add-ingredient-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeListComponent,
     AddRecipeComponent,
-    NavComponent
+    NavComponent,
+    AddIngredientDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { MatListModule } from '@angular/material/list';
     MatStepperModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
